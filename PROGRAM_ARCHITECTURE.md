@@ -52,3 +52,30 @@ Watch an example [video of a PA solution with the GUI in action](https://wgu.hos
 # Class Diagram
 
 ![Class Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/Tydorius/C968/main/uml/CLASS_DIAGRAM.puml)
+Note: If the repository is still private, the above diagram will not be visible. Below is a text version.
+
+```
+
+                                                                                                                    
+                                         -------------------------->                                                 
+,-------------------------------------.                               ,--------------------------------------------.
+|Inventory                            |  ,------------------------.   |Product                                     |
+|-------------------------------------|  |<<abstract>>            |   |--------------------------------------------|
+|+<<prop>> PartID: int                |  |------------------------|   |+<<prop>> AssociatedParts: BindingList<Part>|
+|+<<prop>> AllParts: BindingList<Part>|  |+<<prop>> PartID: int   |   |+<<prop>> ProductID: int                    |
+|+<<prop>> Name: string               |  |+<<prop>> Name: string  |   |+addProduct(Product): void                  |
+|+<<prop>> Price: decimal             |  |+<<prop>> Price: decimal|   |+removeProduct(int): bool                   |
+|+<<prop>> InStock: int               |->|+<<prop>> InStock: int  |<--|+lookupProduct(int): Product                |
+|+<<prop>> Min: int                   |  |+<<prop>> Min: int      |   |+addPart(Part): void                        |
+|+<<prop>> Max: int                   |  |+<<prop>> Max: int      |   |+deletePart(Part): bool                     |
+|+addAssociatedPart(Product): void    |  |                        |   |+lookupPart(int): Part                      |
+|+removeAssociatedPart(int): bool     |  `------------------------'   |+updatePart(int, Part): void                |
+|+lookupAssociatedPart(int): Part     |        ^          ^           `--------------------------------------------'
+`-------------------------------------'        |          |                                                         
+                                               |          |                                                         
+                          ,------------------------.   ,-----------------------------.                              
+                          |Inhouse                 |   |Outsourced                   |                              
+                          |------------------------|   |-----------------------------|                              
+                          |+<<prop>> MachineID: int|   |+<<prop>> CompanyName: string|                              
+                          `------------------------'   `-----------------------------'                              
+```
