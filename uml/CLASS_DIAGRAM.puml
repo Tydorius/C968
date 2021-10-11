@@ -48,4 +48,4 @@ class "Outsourced"{
 "<<abstract>>\nPart" <|-left- Inventory
 "<<abstract>>\nPart" <|-down- Inhouse
 "<<abstract>>\nPart" <|-down- Outsourced
-Inventory <|-right- Product
+Product <|-left- Inventory

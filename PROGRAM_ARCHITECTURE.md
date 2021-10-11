@@ -51,32 +51,4 @@ Watch an example [video of a PA solution with the GUI in action](https://wgu.hos
 
 # Class Diagram
 
-![Class Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/Tydorius/C968/main/uml/CLASS_DIAGRAM.puml)
-
-Note: If the repository is still private, the above diagram will show an error instead of the diagram. Below is a text version.
-
-```
-
-                                                                                                                    
-                                         -------------------------->                                                 
-,-------------------------------------.                               ,--------------------------------------------.
-|Inventory                            |  ,------------------------.   |Product                                     |
-|-------------------------------------|  |<<abstract>>            |   |--------------------------------------------|
-|+<<prop>> PartID: int                |  |------------------------|   |+<<prop>> AssociatedParts: BindingList<Part>|
-|+<<prop>> AllParts: BindingList<Part>|  |+<<prop>> PartID: int   |   |+<<prop>> ProductID: int                    |
-|+<<prop>> Name: string               |  |+<<prop>> Name: string  |   |+addProduct(Product): void                  |
-|+<<prop>> Price: decimal             |  |+<<prop>> Price: decimal|   |+removeProduct(int): bool                   |
-|+<<prop>> InStock: int               |->|+<<prop>> InStock: int  |<--|+lookupProduct(int): Product                |
-|+<<prop>> Min: int                   |  |+<<prop>> Min: int      |   |+addPart(Part): void                        |
-|+<<prop>> Max: int                   |  |+<<prop>> Max: int      |   |+deletePart(Part): bool                     |
-|+addAssociatedPart(Product): void    |  |                        |   |+lookupPart(int): Part                      |
-|+removeAssociatedPart(int): bool     |  `------------------------'   |+updatePart(int, Part): void                |
-|+lookupAssociatedPart(int): Part     |        ^          ^           `--------------------------------------------'
-`-------------------------------------'        |          |                                                         
-                                               |          |                                                         
-                          ,------------------------.   ,-----------------------------.                              
-                          |Inhouse                 |   |Outsourced                   |                              
-                          |------------------------|   |-----------------------------|                              
-                          |+<<prop>> MachineID: int|   |+<<prop>> CompanyName: string|                              
-                          `------------------------'   `-----------------------------'                              
-```
+![Class Inventory points to both Product and the abstract Part. Class Product points to abstract Part. Classes Inhouse and Outsourced both point to abstract Part. Inventory has seven properties and three methods. Properties are as follows, listed as name and then type. PartID, int. AllParts, BindingList Part. Name, string. Price, decimal. InStock, int. Min, int. Max, int. Methods are as followes, listed as method name, then input, and finally the output. addAssociatedPart, Product, void. removeAssociatedPart, int, bool. lookupAssociatedPart, int, Part. The abstract Part class has six properties. PartID, int. Name, string. Price, decimal. InStock, int. Min, int. Max, int. Class Product has two properties. AssociatedParts, BindingList Part. ProductID, int. It has seven methods. addProduct, Product, void. removeProduct, int, bool. lookupProduct, int, Product. addPart, Part, void. deletePart, Part, bool. lookupPath, int, Part. updatePart, int and Part, void. Class Inhouse has one property. MachineID, int. Class Outsourced has one property. CompanyName, string.](./uml/ClassDiagram.png "UML Class Diagram")
