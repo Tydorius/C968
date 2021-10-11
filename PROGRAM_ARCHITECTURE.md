@@ -48,3 +48,29 @@ It is acceptable, but not required, for the app to use a single form (C# file) f
 The ID fields for both the Parts and Products should display auto-generated (unique) numbers.  These ID fields should not allow user modifications.
 
 Watch an example [video of a PA solution with the GUI in action](https://wgu.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d6a807b5-919e-4d42-bb88-a922012975de).  This is just an example.  It represents one of many possible approaches to a solution.
+
+# Class Diagram
+
+```mermaid
+classDiagram
+      Animal <|-- Duck
+      Animal <|-- Fish
+      Animal <|-- Zebra
+      Animal : +int age
+      Animal : +String gender
+      Animal: +isMammal()
+      Animal: +mate()
+      class Duck{
+          +String beakColor
+          +swim()
+          +quack()
+      }
+      class Fish{
+          -int sizeInFeet
+          -canEat()
+      }
+      class Zebra{
+          +bool is_wild
+          +run()
+      }
+```
