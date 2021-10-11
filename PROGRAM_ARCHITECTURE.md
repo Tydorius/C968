@@ -52,6 +52,7 @@ Watch an example [video of a PA solution with the GUI in action](https://wgu.hos
 # Class Diagram
 
 ![Class Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/Tydorius/C968/main/uml/CLASS_DIAGRAM.puml)
+
 Note: If the repository is still private, the above diagram will not be visible. Below is a text version.
 
 ```
