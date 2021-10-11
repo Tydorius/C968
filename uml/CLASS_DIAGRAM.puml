@@ -1,0 +1,51 @@
+@startuml
+
+title Relationships - Class Diagram
+
+class "Inventory"{
+  +<<prop>> PartID: int
+  +<<prop>> AllParts: BindingList<Part>
+  +<<prop>> Name: string
+  +<<prop>> Price: decimal
+  +<<prop>> InStock: int
+  +<<prop>> Min: int
+  +<<prop>> Max: int
+  +addAssociatedPart(Product): void
+  +removeAssociatedPart(int): bool
+  +lookupAssociatedPart(int): Part
+}
+
+class "<<abstract>>\nPart"{
+  +<<prop>> PartID: int
+  +<<prop>> Name: string
+  +<<prop>> Price: decimal
+  +<<prop>> InStock: int
+  +<<prop>> Min: int
+  +<<prop>> Max: int
+}
+
+class "Product"{
+  +<<prop>> AssociatedParts: BindingList<Part>
+  +<<prop>> ProductID: int
+  +addProduct(Product): void
+  +removeProduct(int): bool
+  +lookupProduct(int): Product
+  +addPart(Part): void
+  +deletePart(Part): bool
+  +lookupPart(int): Part
+  +updatePart(int, Part): void
+}
+
+class "Inhouse"{
+  +<<prop>> MachineID: int
+}
+
+class "Outsourced"{
+  +<<prop>> CompanyName: string
+}
+
+"<<abstract>>\nPart" <|-right- Product
+"<<abstract>>\nPart" <|-left- Inventory
+"<<abstract>>\nPart" <|-down- Inhouse
+"<<abstract>>\nPart" <|-down- Outsourced
+Inventory <|-right- Product

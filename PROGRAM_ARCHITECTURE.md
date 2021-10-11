@@ -51,5 +51,4 @@ Watch an example [video of a PA solution with the GUI in action](https://wgu.hos
 
 # Class Diagram
 
-![Example UML](https://yuml.me/diagram/scruffy/class/[Customer]->[Billing Address])
-![Class Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/Zingam/Markdown-Document-UML-Use-Test/master/UML/Instance.puml)
+![Class Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/Tydorius/C968/uml/CLASS_DIAGRAM.puml)
