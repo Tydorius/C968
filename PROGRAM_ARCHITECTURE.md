@@ -51,4 +51,4 @@ Watch an example [video of a PA solution with the GUI in action](https://wgu.hos
 
 # Class Diagram
 
-![Class Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/Tydorius/C968/uml/CLASS_DIAGRAM.puml)
+![Class Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/Tydorius/C968/main/uml/CLASS_DIAGRAM.puml)
