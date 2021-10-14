@@ -118,8 +118,8 @@ frmProductScreen
 * lblMin
 * txtbxMin* 
 * lblAllParts
-* btnSearchPart
-* txtbxSearchPart
+* btnPartSearch
+* txtbxPartSearch
 * dgvParts
 * btnAddPart
 * lblAssociatedParts
