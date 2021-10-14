@@ -80,7 +80,7 @@ frmMainScreen
 * btnModifyProduct
 * btnDeleteProduct
 * btnExit
-* 
+
 frmPartScreen
 * lblTitle
 * radInHouse
@@ -101,7 +101,7 @@ frmPartScreen
 * txtbxMachineIDCompanyName
 * btnSave
 * btnCancel
-* 
+
 frmProductScreen
 * lblTitle
 * lblID
