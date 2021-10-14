@@ -62,6 +62,7 @@ Watch an example [video of a PA solution with the GUI in action](https://wgu.hos
 | Text Box        | txtbx        |
 | Data Grid View  | dgv          |
 | Windows Form    | frm          |
+| Radio Control   | rad          |
 
 frmMainScreen
 * lblTitle
