@@ -127,3 +127,31 @@ frmProductScreen
 * btnDeletePart
 * btnSave
 * btnCancel
+
+## Data Storage
+
+parts.csv
+"Part ID","Name","Inventory","Price","Min","Max"
+
+products.csv
+"Product ID","Name","Inventory","Price","Min","Max"
+
+## Functions
+* Main Screen
+	* loadParts()
+	* loadProducts()
+	* searchParts(txtbxPartSearch.Text)
+	* addPart()
+	* modifyPart(dgvParts.SelectedValue)
+	* deletePart(dgvParts.SelectedValue)
+	* searchProducts(txtbxProductSearch.Text)
+	* addProduct()
+	* modifyProduct(dvgProducts.SelectedValue)
+	* deleteProduct(dvgProducts.SelectedValue)
+* Part Screen
+	* loadData(partID)
+	* txtbxOnChange(objectname)
+	* newID()
+	* radOnChange()
+	* savePart()
+	* cancel()
