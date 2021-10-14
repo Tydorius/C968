@@ -52,3 +52,77 @@ Watch an example [video of a PA solution with the GUI in action](https://wgu.hos
 # Class Diagram
 
 ![Class Inventory points to both Product and the abstract Part. Class Product points to abstract Part. Classes Inhouse and Outsourced both point to abstract Part. Inventory has seven properties and three methods. Properties are as follows, listed as name and then type. PartID, int. AllParts, BindingList Part. Name, string. Price, decimal. InStock, int. Min, int. Max, int. Methods are as followes, listed as method name, then input, and finally the output. addAssociatedPart, Product, void. removeAssociatedPart, int, bool. lookupAssociatedPart, int, Part. The abstract Part class has six properties. PartID, int. Name, string. Price, decimal. InStock, int. Min, int. Max, int. Class Product has two properties. AssociatedParts, BindingList Part. ProductID, int. It has seven methods. addProduct, Product, void. removeProduct, int, bool. lookupProduct, int, Product. addPart, Part, void. deletePart, Part, bool. lookupPath, int, Part. updatePart, int and Part, void. Class Inhouse has one property. MachineID, int. Class Outsourced has one property. CompanyName, string.](./uml/ClassDiagram.png "UML Class Diagram")
+
+# Forms and Controls
+
+| Control Type    | Abbreviation |
+| --------------- | ------------ |
+| Text Label      | lbl          |
+| Button          | btn          |
+| Text Box        | txtbx        |
+| Data Grid View  | dgv          |
+| Windows Form    | frm          |
+
+frmMainScreen
+	lblTitle
+	lblParts
+	btnPartSearch
+	txtbxPartSearch
+	dgvParts
+	btnAddPart
+	btnModifyPart
+	btnDeletePart
+	lblProducts
+	btnProductSearch
+	txtbxProductSearch
+	dgvProducts
+	btnAddProduct
+	btnModifyProduct
+	btnDeleteProduct
+	btnExit
+	
+frmPartScreen
+	lblTitle
+	radInHouse
+	radOutsourced
+	lblID
+	txtbxID
+	lblName
+	txtbxName
+	lblInventory
+	txtbxInventory
+	lblPriceCost
+	txtbxPriceCost
+	lblMax
+	txtbxMax
+	lblMin
+	txtbxMin
+	lblMachineIDCompanyName
+	txtbxMachineIDCompanyName
+	btnSave
+	btnCancel
+	
+frmProductScreen
+	lblTitle
+	lblID
+	txtbxID
+	lblName
+	txtbxName
+	lblInventory
+	txtbxInventory
+	lblPrice
+	txtbxPrice
+	lblMax
+	txtbxMax
+	lblMin
+	txtbxMin	
+	lblAllParts
+	btnSearchPart
+	txtbxSearchPart
+	dgvParts
+	btnAddPart
+	lblAssociatedParts
+	dgvAssociatedParts
+	btnDeletePart
+	btnSave
+	btnCancel
