@@ -1,0 +1,11 @@
+c:\users\michael\documents\visual studio 2015\Projects\C968\C968\bin\Debug\C968.exe.config
+C:\Users\Michael\Documents\Visual Studio 2015\Projects\C968\C968\obj\Debug\C968.csprojResolveAssemblyReference.cache
+C:\Users\Michael\Documents\Visual Studio 2015\Projects\C968\C968\obj\Debug\C968.frmPartScreen.resources
+C:\Users\Michael\Documents\Visual Studio 2015\Projects\C968\C968\obj\Debug\C968.frmProductScreen.resources
+C:\Users\Michael\Documents\Visual Studio 2015\Projects\C968\C968\obj\Debug\C968.Properties.Resources.resources
+C:\Users\Michael\Documents\Visual Studio 2015\Projects\C968\C968\obj\Debug\C968.csproj.GenerateResource.Cache
+C:\Users\Michael\Documents\Visual Studio 2015\Projects\C968\C968\bin\Debug\C968.exe
+C:\Users\Michael\Documents\Visual Studio 2015\Projects\C968\C968\bin\Debug\C968.pdb
+C:\Users\Michael\Documents\Visual Studio 2015\Projects\C968\C968\obj\Debug\C968.exe
+C:\Users\Michael\Documents\Visual Studio 2015\Projects\C968\C968\obj\Debug\C968.pdb
+C:\Users\Michael\Documents\Visual Studio 2015\Projects\C968\C968\obj\Debug\C968.frmMain.resources
