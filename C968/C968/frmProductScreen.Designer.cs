@@ -186,9 +186,15 @@
             // 
             // dgvParts
             // 
+            this.dgvParts.AllowUserToAddRows = false;
+            this.dgvParts.AllowUserToDeleteRows = false;
+            this.dgvParts.AllowUserToResizeRows = false;
             this.dgvParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvParts.Location = new System.Drawing.Point(291, 60);
+            this.dgvParts.MultiSelect = false;
             this.dgvParts.Name = "dgvParts";
+            this.dgvParts.ReadOnly = true;
+            this.dgvParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvParts.Size = new System.Drawing.Size(380, 100);
             this.dgvParts.TabIndex = 23;
             // 
@@ -228,9 +234,15 @@
             // 
             // dgvAssociatedParts
             // 
+            this.dgvAssociatedParts.AllowUserToAddRows = false;
+            this.dgvAssociatedParts.AllowUserToDeleteRows = false;
+            this.dgvAssociatedParts.AllowUserToResizeRows = false;
             this.dgvAssociatedParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAssociatedParts.Location = new System.Drawing.Point(291, 192);
+            this.dgvAssociatedParts.MultiSelect = false;
             this.dgvAssociatedParts.Name = "dgvAssociatedParts";
+            this.dgvAssociatedParts.ReadOnly = true;
+            this.dgvAssociatedParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAssociatedParts.Size = new System.Drawing.Size(380, 100);
             this.dgvAssociatedParts.TabIndex = 23;
             // 
@@ -296,6 +308,7 @@
             this.MinimumSize = new System.Drawing.Size(700, 400);
             this.Name = "frmProductScreen";
             this.Text = "Product";
+            this.Load += new System.EventHandler(this.frmProductScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvParts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssociatedParts)).EndInit();
             this.ResumeLayout(false);

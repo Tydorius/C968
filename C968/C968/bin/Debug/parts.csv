@@ -1,4 +1,4 @@
-Part ID,Name,Inventory,Price,Min,Max
-1,Example Part,7,3.50,1,50
-2,Example Part Two,7,6.50,7,52
-3,Example Part Three,7,12.50,3,57
+Part ID,Name,Inventory,Price,Min,Max,In House,MachineID,Company Name,In Stock
+1,Example Part,7,3.50,1,50,1,37,
+2,Example Part Two,7,6.50,7,52,0,,Forvy
+3,Example Part Three,7,12.50,3,57,1,59,
