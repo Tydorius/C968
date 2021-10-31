@@ -1,0 +1,7 @@
+Type,ProductID,PartID,Name,Price,In Stock,Min,Max,MachineID,Company Name,Components
+InHouse,,1,Example In-House Part,3.5,7,0,50,7,,
+Outsourced,,2,Generic Outsourced Part,7.2,3,0,50,,Forvy,
+Product,1,,Example Product,57.2,19,10,20,,,1|4
+Product,2,,Example Product,57.2,27,10,20,,,1|2
+Outsourced,,4,Example Outsourced Part,4,5,0,50,,Toysubishi,
+InHouse,,5,Added Part One,5.60,12,1,9,27,,
