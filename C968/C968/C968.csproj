@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Outsourced.cs" />
+    <Compile Include="Inventory.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,7 +66,7 @@
     <Compile Include="frmProductScreen.Designer.cs">
       <DependentUpon>frmProductScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="ComponentList.cs" />
+    <Compile Include="InHouse.cs" />
     <Compile Include="Part.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
@@ -87,6 +89,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\frmMain.datasource" />
+    <None Include="Properties\DataSources\Inventory.datasource" />
     <None Include="Properties\DataSources\Part.datasource" />
     <None Include="Properties\DataSources\Product.datasource" />
     <None Include="Properties\Settings.settings">

@@ -45,12 +45,16 @@
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.btnModifyProduct = new System.Windows.Forms.Button();
             this.btnDeleteProduct = new System.Windows.Forms.Button();
-            this.partBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.partBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.frmMainBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.partBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.partBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frmMainBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnProductSearch
@@ -61,6 +65,7 @@
             this.btnProductSearch.TabIndex = 0;
             this.btnProductSearch.Text = "Search";
             this.btnProductSearch.UseVisualStyleBackColor = true;
+            this.btnProductSearch.Click += new System.EventHandler(this.btnProductSearch_Click);
             // 
             // txtbxProductSearch
             // 
@@ -68,16 +73,23 @@
             this.txtbxProductSearch.Name = "txtbxProductSearch";
             this.txtbxProductSearch.Size = new System.Drawing.Size(160, 20);
             this.txtbxProductSearch.TabIndex = 1;
+            this.txtbxProductSearch.TextChanged += new System.EventHandler(this.txtbxProductSearch_TextChanged);
             // 
             // dgvParts
             // 
-            this.dgvParts.AutoGenerateColumns = false;
+            this.dgvParts.AllowUserToAddRows = false;
+            this.dgvParts.AllowUserToDeleteRows = false;
+            this.dgvParts.AllowUserToResizeRows = false;
+            this.dgvParts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvParts.DataSource = this.partBindingSource;
             this.dgvParts.Location = new System.Drawing.Point(5, 75);
+            this.dgvParts.MultiSelect = false;
             this.dgvParts.Name = "dgvParts";
+            this.dgvParts.ReadOnly = true;
+            this.dgvParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvParts.Size = new System.Drawing.Size(380, 200);
             this.dgvParts.TabIndex = 2;
+            this.dgvParts.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParts_CellDoubleClick);
             // 
             // lblTitle
             // 
@@ -125,6 +137,7 @@
             this.txtbxPartSearch.Name = "txtbxPartSearch";
             this.txtbxPartSearch.Size = new System.Drawing.Size(160, 20);
             this.txtbxPartSearch.TabIndex = 1;
+            this.txtbxPartSearch.TextChanged += new System.EventHandler(this.txtbxPartSearch_TextChanged);
             // 
             // btnPartSearch
             // 
@@ -134,14 +147,20 @@
             this.btnPartSearch.TabIndex = 0;
             this.btnPartSearch.Text = "Search";
             this.btnPartSearch.UseVisualStyleBackColor = true;
+            this.btnPartSearch.Click += new System.EventHandler(this.btnPartSearch_Click);
             // 
             // dgvProducts
             // 
-            this.dgvProducts.AutoGenerateColumns = false;
+            this.dgvProducts.AllowUserToAddRows = false;
+            this.dgvProducts.AllowUserToDeleteRows = false;
+            this.dgvProducts.AllowUserToResizeRows = false;
+            this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.DataSource = this.productBindingSource;
             this.dgvProducts.Location = new System.Drawing.Point(400, 75);
+            this.dgvProducts.MultiSelect = false;
             this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.ReadOnly = true;
+            this.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProducts.Size = new System.Drawing.Size(380, 200);
             this.dgvProducts.TabIndex = 2;
             // 
@@ -163,6 +182,7 @@
             this.btnDeletePart.TabIndex = 0;
             this.btnDeletePart.Text = "Delete";
             this.btnDeletePart.UseVisualStyleBackColor = true;
+            this.btnDeletePart.Click += new System.EventHandler(this.btnDeletePart_Click);
             // 
             // btnExit
             // 
@@ -192,6 +212,7 @@
             this.btnModifyProduct.TabIndex = 0;
             this.btnModifyProduct.Text = "Modify";
             this.btnModifyProduct.UseVisualStyleBackColor = true;
+            this.btnModifyProduct.Click += new System.EventHandler(this.btnModifyProduct_Click);
             // 
             // btnDeleteProduct
             // 
@@ -201,14 +222,23 @@
             this.btnDeleteProduct.TabIndex = 0;
             this.btnDeleteProduct.Text = "Delete";
             this.btnDeleteProduct.UseVisualStyleBackColor = true;
+            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
+            // 
+            // inventoryBindingSource
+            // 
+            this.inventoryBindingSource.DataSource = typeof(C968.Inventory);
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(C968.Product);
             // 
             // partBindingSource
             // 
             this.partBindingSource.DataSource = typeof(C968.Part);
             // 
-            // productBindingSource
+            // frmMainBindingSource
             // 
-            this.productBindingSource.DataSource = typeof(C968.Product);
+            this.frmMainBindingSource.DataSource = typeof(C968.frmMain);
             // 
             // frmMain
             // 
@@ -239,8 +269,10 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvParts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.partBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.partBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frmMainBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,6 +298,8 @@
         private System.Windows.Forms.Button btnDeleteProduct;
         private System.Windows.Forms.BindingSource partBindingSource;
         private System.Windows.Forms.BindingSource productBindingSource;
+        private System.Windows.Forms.BindingSource frmMainBindingSource;
+        private System.Windows.Forms.BindingSource inventoryBindingSource;
     }
 }
 

@@ -337,25 +337,28 @@ namespace C968
                     // We have additional work to do for products.
                     // Initialize our component string.
                     string strComponents = null;
-                    foreach(Part componentPart in ((Product)objPart).AssociatedParts)
+                    if (((Product)objPart).AssociatedParts != null)
                     {
-                        // If the string is not null, we need to add a separator.
-                        if(strComponents != null)
+                        foreach (Part componentPart in ((Product)objPart).AssociatedParts)
                         {
-                            strComponents += "|";
+                            // If the string is not null, we need to add a separator.
+                            if (strComponents != null)
+                            {
+                                strComponents += "|";
+                            }
+                            // Get our part ID:
+                            strComponents += Convert.ToString(componentPart.PartID);
                         }
-                        // Get our part ID:
-                        strComponents += Convert.ToString(componentPart.PartID);
                     }
                     // Build our line:
                     // Type,ProductID,PartID,Name,Price,In Stock,Min,Max,MachineID,Company Name,Components
-                    strLine = "Product," + objPart.PartID + ",," + objPart.Name + "," + objPart.Price + "," + objPart.InStock + "," + objPart.Min + "," + objPart.Max + ",,," + strComponents;
+                    strLine = "Product," + ((Product)objPart).ProductID + ",," + objPart.Name + "," + objPart.Price + "," + objPart.InStock + "," + objPart.Min + "," + objPart.Max + ",,," + strComponents;
                 }
                 // Add our line to our export list.
                 csvExport.Add(strLine);
             }
             // Export our updated file.
-            // System.IO.File.WriteAllLines(FileTree.strInventoryFile, csvExport);
+            File.WriteAllLines(FileTree.strInventoryFile, csvExport);
         }
 }
 }

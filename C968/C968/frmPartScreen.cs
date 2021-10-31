@@ -180,6 +180,21 @@ namespace C968
                     valid = false;
                 }
             }
+            // Validate Inventory - Must not be null, must be only positive integers or 0, and must be greater than or equal to min.
+            if (!(txtbxMax.Text == "" || txtbxMax.Text == null || Regex.IsMatch(txtbxMax.Text, "[^0-9]")))
+            {
+                if (!(txtbxMin.Text == "" || txtbxMin.Text == null || Regex.IsMatch(txtbxMin.Text, "[^0-9]")))
+                {
+                    if (!(txtbxInventory.Text == "" || txtbxInventory.Text == null || Regex.IsMatch(txtbxInventory.Text, "[^0-9]")))
+                    {
+                        if (Convert.ToInt32(txtbxInventory.Text) <= Convert.ToInt32(txtbxMin.Text) || Convert.ToInt32(txtbxInventory.Text) >= Convert.ToInt32(txtbxMax.Text))
+                        {
+                            txtbxInventory.BackColor = Color.Salmon;
+                            valid = false;
+                        }
+                    }
+                }
+            }
             // Validate Max - Must not be null, must be only positive integers or 0, and must be greater than or equal to min.
             if (txtbxMax.Text == "" || txtbxMax.Text == null || Regex.IsMatch(txtbxMax.Text, "[^0-9]"))
             {
@@ -233,6 +248,10 @@ namespace C968
             {
                 savePart();
                 saved = true;
+                if (saved == true)
+                {
+                    this.Close();
+                }
             }
             // Else, warning.
             if (valid == false)
@@ -299,8 +318,6 @@ namespace C968
                 // Finish.
                 return;
             }
-            // If we make it here, there's a problem.
-            // TODO: Exception.
         }
 
         private int newID()

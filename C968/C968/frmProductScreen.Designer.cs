@@ -126,35 +126,40 @@
             this.txtbxMin.Location = new System.Drawing.Point(210, 135);
             this.txtbxMin.Name = "txtbxMin";
             this.txtbxMin.Size = new System.Drawing.Size(60, 20);
-            this.txtbxMin.TabIndex = 7;
+            this.txtbxMin.TabIndex = 5;
+            this.txtbxMin.TextChanged += new System.EventHandler(this.txtbxMin_TextChanged);
             // 
             // txtbxMax
             // 
             this.txtbxMax.Location = new System.Drawing.Point(110, 135);
             this.txtbxMax.Name = "txtbxMax";
             this.txtbxMax.Size = new System.Drawing.Size(60, 20);
-            this.txtbxMax.TabIndex = 8;
+            this.txtbxMax.TabIndex = 4;
+            this.txtbxMax.TextChanged += new System.EventHandler(this.txtbxMax_TextChanged);
             // 
             // txtbxPriceCost
             // 
             this.txtbxPriceCost.Location = new System.Drawing.Point(110, 110);
             this.txtbxPriceCost.Name = "txtbxPriceCost";
             this.txtbxPriceCost.Size = new System.Drawing.Size(160, 20);
-            this.txtbxPriceCost.TabIndex = 9;
+            this.txtbxPriceCost.TabIndex = 3;
+            this.txtbxPriceCost.TextChanged += new System.EventHandler(this.txtbxPriceCost_TextChanged);
             // 
             // txtbxInventory
             // 
             this.txtbxInventory.Location = new System.Drawing.Point(110, 85);
             this.txtbxInventory.Name = "txtbxInventory";
             this.txtbxInventory.Size = new System.Drawing.Size(160, 20);
-            this.txtbxInventory.TabIndex = 10;
+            this.txtbxInventory.TabIndex = 2;
+            this.txtbxInventory.TextChanged += new System.EventHandler(this.txtbxInventory_TextChanged);
             // 
             // txtbxName
             // 
             this.txtbxName.Location = new System.Drawing.Point(110, 60);
             this.txtbxName.Name = "txtbxName";
             this.txtbxName.Size = new System.Drawing.Size(160, 20);
-            this.txtbxName.TabIndex = 11;
+            this.txtbxName.TabIndex = 1;
+            this.txtbxName.TextChanged += new System.EventHandler(this.txtbxName_TextChanged);
             // 
             // txtbxID
             // 
@@ -163,6 +168,7 @@
             this.txtbxID.ReadOnly = true;
             this.txtbxID.Size = new System.Drawing.Size(160, 20);
             this.txtbxID.TabIndex = 12;
+            this.txtbxID.TabStop = false;
             // 
             // lblTitle
             // 
@@ -196,41 +202,46 @@
             this.dgvParts.ReadOnly = true;
             this.dgvParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvParts.Size = new System.Drawing.Size(380, 100);
-            this.dgvParts.TabIndex = 23;
+            this.dgvParts.TabIndex = 8;
+            this.dgvParts.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParts_CellContentDoubleClick);
             // 
             // txtbxPartSearch
             // 
             this.txtbxPartSearch.Location = new System.Drawing.Point(511, 35);
             this.txtbxPartSearch.Name = "txtbxPartSearch";
             this.txtbxPartSearch.Size = new System.Drawing.Size(160, 20);
-            this.txtbxPartSearch.TabIndex = 22;
+            this.txtbxPartSearch.TabIndex = 7;
+            this.txtbxPartSearch.TextChanged += new System.EventHandler(this.txtbxPartSearch_TextChanged);
             // 
             // btnAddPart
             // 
             this.btnAddPart.Location = new System.Drawing.Point(621, 166);
             this.btnAddPart.Name = "btnAddPart";
             this.btnAddPart.Size = new System.Drawing.Size(50, 20);
-            this.btnAddPart.TabIndex = 20;
+            this.btnAddPart.TabIndex = 9;
             this.btnAddPart.Text = "Add";
             this.btnAddPart.UseVisualStyleBackColor = true;
+            this.btnAddPart.Click += new System.EventHandler(this.btnAddPart_Click);
             // 
             // btnPartSearch
             // 
             this.btnPartSearch.Location = new System.Drawing.Point(456, 35);
             this.btnPartSearch.Name = "btnPartSearch";
             this.btnPartSearch.Size = new System.Drawing.Size(50, 20);
-            this.btnPartSearch.TabIndex = 21;
+            this.btnPartSearch.TabIndex = 6;
             this.btnPartSearch.Text = "Search";
             this.btnPartSearch.UseVisualStyleBackColor = true;
+            this.btnPartSearch.Click += new System.EventHandler(this.btnPartSearch_Click);
             // 
             // btnDeletePart
             // 
             this.btnDeletePart.Location = new System.Drawing.Point(621, 298);
             this.btnDeletePart.Name = "btnDeletePart";
             this.btnDeletePart.Size = new System.Drawing.Size(50, 20);
-            this.btnDeletePart.TabIndex = 20;
+            this.btnDeletePart.TabIndex = 11;
             this.btnDeletePart.Text = "Delete";
             this.btnDeletePart.UseVisualStyleBackColor = true;
+            this.btnDeletePart.Click += new System.EventHandler(this.btnDeletePart_Click);
             // 
             // dgvAssociatedParts
             // 
@@ -244,7 +255,8 @@
             this.dgvAssociatedParts.ReadOnly = true;
             this.dgvAssociatedParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAssociatedParts.Size = new System.Drawing.Size(380, 100);
-            this.dgvAssociatedParts.TabIndex = 23;
+            this.dgvAssociatedParts.TabIndex = 10;
+            this.dgvAssociatedParts.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAssociatedParts_CellContentDoubleClick);
             // 
             // lblAssociatedParts
             // 
@@ -261,7 +273,7 @@
             this.btnCancel.Location = new System.Drawing.Point(621, 324);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(50, 20);
-            this.btnCancel.TabIndex = 20;
+            this.btnCancel.TabIndex = 0;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -271,9 +283,10 @@
             this.btnSave.Location = new System.Drawing.Point(565, 324);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(50, 20);
-            this.btnSave.TabIndex = 20;
+            this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmProductScreen
             // 
