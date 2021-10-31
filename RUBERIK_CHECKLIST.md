@@ -86,5 +86,23 @@ _2.   “Modify Product” form_
 **J.  Write code to address the following conditions with exception handling code:**
 - [x] Detect non-numeric values in textboxes that expect numeric values
 - [x] Min should be less than Max; and Inv should be between those two values
-- [ ] Prevent the user from deleting a product that has a Part associated with it
+- [x] Prevent the user from deleting a product that has a Part associated with it
 - [x] Confirm “Delete” actions
+
+**File Restrictions**
+- File name may contain only letters, numbers, spaces, and these symbols: ! - _ . * ' ( )
+- File size limit: 200 MB
+- File types allowed: doc, docx, rtf, xls, xlsx, ppt, pptx, odt, pdf, txt, qt, mov, mpg, avi, mp3, wav, mp4, wma, flv, asf, mpeg, wmv, m4v, svg, tif, tiff, jpeg, jpg, gif, png, zip, rar, tar, 7z
+
+# Rubric Scoring:
+Main Form
+Main Form Functions
+Add Part Form
+Add Part Form Functions
+Modify Part Form
+Modify Part Form Functions
+Add Product Form
+Modify Product Form
+Class Structure
+Exception Handling Code
+Professional Communication
