@@ -142,8 +142,18 @@ namespace C968
                 // Delete the row from the table object.                
                 // Create a temporary product.
                 Product tmpProduct = new Product();
+                Product objProduct = tmpProduct.lookupProduct(Convert.ToInt32(selectedPartID));
                 // Delete the item.
-                bool deleted = tmpProduct.deletePart(tmpProduct.lookupProduct(Convert.ToInt32(selectedPartID)));
+                bool safeToDelete = true;
+                if (objProduct.AssociatedParts.Count > 0)
+                {
+                    safeToDelete = false;
+                    MessageBox.Show("Error, product has associated parts. Remove associations and try again.");
+                }
+                if (safeToDelete == true)
+                {
+                    bool deleted = tmpProduct.deletePart(tmpProduct.lookupProduct(Convert.ToInt32(selectedPartID)));
+                }
             }
 
             // Else ...

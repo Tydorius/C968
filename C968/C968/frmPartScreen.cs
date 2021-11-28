@@ -18,6 +18,7 @@ namespace C968
     {
         private bool valid;
         private bool saved;
+        public string validationErrors;
 
         // Create a product solely so we can use lookupPart and addPart, which is mandatorily set as a part of the Product Class.
         Product tmpProduct = new Product();
@@ -108,6 +109,8 @@ namespace C968
         {
             // Set to valid, unless we find a problem.
             valid = true;
+            // Reset error string.
+            validationErrors = "";
             // Reset the colors.
             txtbxName.BackColor = Color.White;
             txtbxInventory.BackColor = Color.White;
@@ -120,21 +123,28 @@ namespace C968
             // Name can't be blank and can't contain a comma.
             if (txtbxName.Text == "" || txtbxName.Text == null || txtbxName.Text.Contains("."))
             {
+                validationErrors += Environment.NewLine;
+                validationErrors += "Name can not be empty.";
                 txtbxName.BackColor = Color.Salmon;
                 valid = false;
             }
             // Inventory can't be blank and must be positive numeric or zero.
             if (txtbxInventory.Text == "" || txtbxInventory.Text == null || Regex.IsMatch(txtbxInventory.Text, "[^0-9]"))
             {
+                validationErrors += Environment.NewLine;
+                validationErrors += "Inventory can not be empty and must be a positive whole number or zero.";
                 txtbxInventory.BackColor = Color.Salmon;
                 valid = false;
             }
             // Validate that cost isn't blank.
             if (txtbxPriceCost.Text == "" || txtbxPriceCost.Text == null)
             {
+                validationErrors += Environment.NewLine;
+                validationErrors += "Price can not be empty.";
                 txtbxPriceCost.BackColor = Color.Salmon;
                 valid = false;
             }
+            bool invalidAmt = false;
             // Validatioin if there's a decimal
             if(txtbxPriceCost.Text.Contains("."))
             {
@@ -144,6 +154,7 @@ namespace C968
                 // If there are too many decimals, we make it invalid.
                 if (tempSplit.Length > 2)
                 {
+                    invalidAmt = true;
                     txtbxPriceCost.BackColor = Color.Salmon;
                     valid = false;
                 }
@@ -153,6 +164,7 @@ namespace C968
                     // We want 1 or 2 decimal places. No more, no less.
                     if(tempSplit[1].Length == 0 || tempSplit[1].Length > 2)
                     {
+                        invalidAmt = true;
                         txtbxPriceCost.BackColor = Color.Salmon;
                         valid = false;
                     }
@@ -160,13 +172,17 @@ namespace C968
                     // We are already invalid if we have a [2] or higher, so we only need to check [1].
                     if (Regex.IsMatch(tempSplit[1], "[^0-9]"))
                     {
+                        invalidAmt = true;
                         txtbxPriceCost.BackColor = Color.Salmon;
                         valid = false;
                     }
                 }
                 // Finally, confirm that we only have integers not counting our decimal on the left.
-                if (Regex.IsMatch(tempSplit[0], "[^0-9]"))
+                if (Regex.IsMatch(tempSplit[0], "[^0-9]") || invalidAmt == true)
                 {
+                    validationErrors += Environment.NewLine;
+                    validationErrors += "Price must be valid and numeric, either whole number or a max of two decimal places.";
+                    invalidAmt = true;
                     txtbxPriceCost.BackColor = Color.Salmon;
                     valid = false;
                 }
@@ -176,6 +192,8 @@ namespace C968
             {
                 if (Regex.IsMatch(txtbxPriceCost.Text, "[^0-9]"))
                 {
+                    validationErrors += Environment.NewLine;
+                    validationErrors += "Price must be valid and numeric, either whole number or a max of two decimal places.";
                     txtbxPriceCost.BackColor = Color.Salmon;
                     valid = false;
                 }
@@ -189,6 +207,8 @@ namespace C968
                     {
                         if (Convert.ToInt32(txtbxInventory.Text) <= Convert.ToInt32(txtbxMin.Text) || Convert.ToInt32(txtbxInventory.Text) >= Convert.ToInt32(txtbxMax.Text))
                         {
+                            validationErrors += Environment.NewLine;
+                            validationErrors += "Maximum inventory should be a positive whole number.";
                             txtbxInventory.BackColor = Color.Salmon;
                             valid = false;
                         }
@@ -198,12 +218,16 @@ namespace C968
             // Validate Max - Must not be null, must be only positive integers or 0, and must be greater than or equal to min.
             if (txtbxMax.Text == "" || txtbxMax.Text == null || Regex.IsMatch(txtbxMax.Text, "[^0-9]"))
             {
+                validationErrors += Environment.NewLine;
+                validationErrors += "Current inventory must be between the maximum and minimum values.";
                 txtbxMax.BackColor = Color.Salmon;
                 valid = false;
             }
             // Validate Min - Must not be null, must be only positive integers or 0, and must be less or equal to Max.
             if (txtbxMin.Text == "" || txtbxMin.Text == null || Regex.IsMatch(txtbxMin.Text, "[^0-9]"))
             {
+                validationErrors += Environment.NewLine;
+                validationErrors += "Minimum inventory should be a positive whole number or zero.";
                 txtbxMin.BackColor = Color.Salmon;
                 valid = false;
             }
@@ -212,6 +236,8 @@ namespace C968
             {
                 if(!(Convert.ToInt32(txtbxMax.Text) >= Convert.ToInt32(txtbxMin.Text)))
                 {
+                    validationErrors += Environment.NewLine;
+                    validationErrors += "Maximum inventory should be greater than the minimum.";
                     txtbxMin.BackColor = Color.Salmon;
                     valid = false;
                 }
@@ -256,7 +282,8 @@ namespace C968
             // Else, warning.
             if (valid == false)
             {
-                MessageBox.Show("Please correct errors before saving.", "Error");
+                string msg = "Please correct errors before saving." + validationErrors;
+                MessageBox.Show(msg, "Error");
             }
         }
         // Save part.
